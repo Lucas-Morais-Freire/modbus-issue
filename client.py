@@ -1,5 +1,6 @@
 import sys
 from pymodbus.client import AsyncModbusTcpClient
+from pymodbus.exceptions import ModbusException
 import asyncio
 
 async def run_client():
@@ -10,7 +11,17 @@ async def run_client():
     print("connected!")
 
 
-    pdu = await client.read_holding_registers(int(sys.argv[1]))
+    try:
+        pdu = await client.read_holding_registers(int(sys.argv[1]))
+    except ModbusException as exc:
+        print(f"Received ModbusException({exc}) from library")
+        client.close()
+        return
+    if pdu.isError():
+        print(f"Received exception from device ({pdu})")
+        client.close()
+        return
+
     print(f'returned function code: {hex(pdu.function_code)}.')
 
     # pdu = await client.read_holding_registers(10)
