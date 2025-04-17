@@ -1,0 +1,58 @@
+{
+	"server_list": {
+		"server": {
+			"comm": "tcp",
+			"host": "127.0.0.1",
+			"port": 5020,
+			"framer": "socket",
+			"identity": {
+				"VendorName": "TheGame",
+				"ProductCode": "123",
+				"VendorUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+				"ProductName": "coconut",
+				"ModelName": "mall",
+				"MajorMinorRevision": "1.2.3"
+			}
+		}
+	},
+	"device_list": {
+		"device": {
+			"setup": {
+				"co size": 4,
+				"di size": 4,
+				"hr size": 4,
+				"ir size": 4,
+				"shared blocks": true,
+				"type exception": true,
+				"defaults": {
+					"value": {
+						"bits": 0,
+						"uint16": 0,
+						"uint32": 0,
+						"float32": 0.0,
+						"string": ""
+					},
+					"action": {
+						"bits": null,
+						"uint16": null,
+						"uint32": null,
+						"float32": null,
+						"string": null
+					}
+				}
+			},
+			"bits": [],
+			"uint32": [],
+			"uint16":[
+				2, 3
+			],
+			"float32": [],
+			"string": [],
+			"invalid": [
+				0, 1
+			],
+			"write": [],
+			"repeat": []
+		}
+	}
+}
